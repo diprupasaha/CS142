@@ -95,10 +95,7 @@ class DoubleLL{
 	}
 	//delete
 	void delet(){
-		if (head == NULL){
-			cout<<"\nThe double linked list is empty\n";
-		}
-		else{
+		if (head!=tail){
 			//store the tail in temp
 			Node *temp = tail;
 			//before tail has to point to null
@@ -111,6 +108,11 @@ class DoubleLL{
 			tail = current;
 			//delete temp
 			delete temp;
+		}
+		else{
+			head = NULL;
+			tail = NULL;
+			cout<<"\nThe double linked list becomes empty now";
 		}
 	}
 	//deleteAt
@@ -162,25 +164,7 @@ class DoubleLL{
     	}
 };	
 
-
 //main
-/*int main(){
-	DoubleLL l1;
-	l1.insert(1);
-	l1.insert(2);
-	l1.insert(3);
-	l1.insertAt(3,7);
-	l1.display();
-	l1.delet();
-	l1.display();
-	cout<<"The number of elements in the double linked list is : "<<l1.countItems()<<endl;
-	l1.deleteAt(1);
-	l1.display();
-
-	return 7;
-
-}		
-*/
 int main(){
 	DoubleLL l1;
 	while (true){
@@ -198,7 +182,7 @@ int main(){
 		}
 		else if(n==2){
 			if(l1.countItems()==0){
-				cout<<"\nThe linked list is empty";
+				cout<<"\nThe double linked list is empty";
 			}
 			else{
 				l1.delet();
@@ -207,7 +191,7 @@ int main(){
 		}
 		else if(n==3){	
 			if(l1.countItems()==0){
-				cout<<"\nThe linked list is empty";
+				cout<<"\nThe double linked list is empty";
 			}
 			else{
 				int pos, value;
@@ -227,7 +211,7 @@ int main(){
 		}
 		else if(n==4){
 			if(l1.countItems()==0){
-				cout<<"\nThe linked list is empty";
+				cout<<"\nThe double linked list is empty";
 			}
 			else{
 				int pos;
