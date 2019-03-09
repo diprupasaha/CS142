@@ -89,7 +89,7 @@ class BST{
 		//print req spaces
 		//display curr
 		//display left
-		/*
+		
 				16
 			14
 				12
@@ -97,7 +97,7 @@ class BST{
 				8
 			6
 				4
-		*/
+		
 	}
 	*/
 	
