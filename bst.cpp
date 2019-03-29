@@ -184,9 +184,31 @@ class BST{
 			A->parent=NULL;
 		}
 	}
+	//counting all the nodes in the BST
 	int tcount(){
 		return count;
-	}		
+	}
+	//range search: given two values k1 and k2, print all the elements (or keys) x in the BST such that k1 <= x <= k2. Also count the number of elements in the range from k1 to k2 and returns it.
+	int rangeSearch(int k1, int k2){
+		//counting the number of elements
+		int c=0;
+		//checking if the elements are there or not
+		int flag=0;
+		for(int i=k1;i<=k2;i++){
+			if (search(i)!=NULL){
+				flag = 1;
+				c++;
+				cout<<i<<" ";
+			}
+		}
+		//message when no element falls in the range
+		if(flag==0){
+			cout<<"The given range does not contain any tree elements\n";
+		}
+		cout<<endl;	
+		return c;
+	}	
+	//delete node
 	void binary_delete(Node * curr, int key){
 		//if BST is empty or reaches a leaf
 		if(curr==NULL){
@@ -288,6 +310,8 @@ int main(){
 	bst1.print2D();
 	bst1.height();
 	cout<<"The minimum element of the tree is : "<<bst1.find_min(bst1.root)->data<<endl;
+	int s=bst1.rangeSearch(4,5);
+	cout<<"The number of elements of tree falling within the range is : "<<s<<endl;
 	bst1.binary_delete(bst1.root,5);
 	bst1.print2D();
 	bst1.binary_delete(bst1.root,6);
@@ -307,6 +331,7 @@ int main(){
 	bst1.print2D();
 	bst1.binary_delete(bst1.root,1);
 	bst1.print2D();
+	
 	return 7;
 }
 
